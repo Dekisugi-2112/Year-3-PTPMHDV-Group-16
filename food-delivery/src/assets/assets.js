@@ -43,6 +43,44 @@ import food_29 from "./food_29.jpg";
 import food_30 from "./food_30.jpg";
 import food_31 from "./food_31.jpg";
 import food_32 from "./food_32.jpg";
+import food_33 from "./food_33.jpg";
+import food_34 from "./food_34.jpg";
+import food_35 from "./food_35.jpg";
+import food_36 from "./food_36.jpg";
+import food_37 from "./food_37.jpg";
+// import food_38 from "./food_38.jpg";
+// import food_39 from "./food_39.jpg";
+// import food_40 from "./food_40.jpg";
+// import food_41 from "./food_41.jpg";
+// import food_42 from "./food_42.jpg";
+// import food_43 from "./food_43.jpg";
+// import food_44 from "./food_44.jpg";
+// import food_45 from "./food_45.jpg";
+// import food_46 from "./food_46.jpg";
+// import food_47 from "./food_47.jpg";
+// import food_48 from "./food_48.jpg";
+// import food_49 from "./food_49.jpg";
+// import food_50 from "./food_50.jpg";
+// import food_51 from "./food_51.jpg";
+// import food_52 from "./food_52.jpg";
+// import food_53 from "./food_53.jpg";
+// import food_54 from "./food_54.jpg";
+// import food_55 from "./food_55.jpg";
+// import food_56 from "./food_56.jpg";
+// import food_57 from "./food_57.jpg";
+// import food_58 from "./food_58.jpg";
+// import food_59 from "./food_59.jpg";
+// import food_60 from "./food_60.jpg";
+// import food_61 from "./food_61.jpg";
+// import food_62 from "./food_62.jpg";
+// import food_63 from "./food_63.jpg";
+// import food_64 from "./food_64.jpg";
+// import food_65 from "./food_65.jpg";
+// import food_66 from "./food_66.jpg";
+// import food_67 from "./food_67.jpg";
+// import food_68 from "./food_68.jpg";
+// import food_69 from "./food_69.jpg";
+// import food_70 from "./food_70.jpg";
 
 import rating_starts from "./rating_starts.png";
 import add_icon_white from "./add_icon_white.png";
@@ -144,4 +182,43 @@ export const food_list = [
 	{ _id: '30', name: "Món 30", image: food_30, price: 26, description: "Món ăn số 30.", category: "Rolls" },
 	{ _id: '31', name: "Món 31", image: food_31, price: 23, description: "Món ăn số 31.", category: "Sandwich" },
 	{ _id: '32', name: "Món 32", image: food_32, price: 29, description: "Món ăn số 32.", category: "Desserts" },
+	{ _id: '33', name: "Món 33", image: food_33, price: 29, description: "Món ăn số 33.", category: "Desserts" },
+	{ _id: '34', name: "Món 34", image: food_34, price: 29, description: "Món ăn số 34.", category: "Desserts" },
+	{ _id: '35', name: "Món 35", image: food_35, price: 29, description: "Món ăn số 35.", category: "Desserts" },
+	{ _id: '36', name: "Món 36", image: food_36, price: 29, description: "Món ăn số 36.", category: "Desserts" },
+	{ _id: '37', name: "Món 37", image: food_37, price: 29, description: "Món ăn số 37.", category: "Desserts" },
+	// { _id: '38', name: "Món 38", image: food_38, price: 29, description: "Món ăn số 38.", category: "Desserts" },
+	// { _id: '39', name: "Món 39", image: food_39, price: 29, description: "Món ăn số 39.", category: "Desserts" },
+	// { _id: '40', name: "Món 40", image: food_40, price: 29, description: "Món ăn số 40.", category: "Desserts" },
+	// { _id: '41', name: "Món 41", image: food_41, price: 29, description: "Món ăn số 41.", category: "Desserts" },
+	// { _id: '42', name: "Món 42", image: food_42, price: 29, description: "Món ăn số 42.", category: "Desserts" },
+	// { _id: '43', name: "Món 43", image: food_43, price: 29, description: "Món ăn số 43.", category: "Desserts" },
+	// { _id: '44', name: "Món 44", image: food_44, price: 29, description: "Món ăn số 44.", category: "Desserts" },
+	// { _id: '45', name: "Món 45", image: food_45, price: 29, description: "Món ăn số 45.", category: "Desserts" },
+	// { _id: '46', name: "Món 46", image: food_46, price: 29, description: "Món ăn số 46.", category: "Desserts" },
+	// { _id: '47', name: "Món 47", image: food_47, price: 29, description: "Món ăn số 47.", category: "Desserts" },
+	// { _id: '48', name: "Món 48", image: food_48, price: 29, description: "Món ăn số 48.", category: "Desserts" },
+	// { _id: '49', name: "Món 49", image: food_49, price: 29, description: "Món ăn số 49.", category: "Desserts" },
+	// { _id: '50', name: "Món 50", image: food_50, price: 29, description: "Món ăn số 50.", category: "Desserts" },
+	// { _id: '51', name: "Món 51", image: food_51, price: 29, description: "Món ăn số 51.", category: "Desserts" },
+	// { _id: '52', name: "Món 52", image: food_52, price: 29, description: "Món ăn số 52.", category: "Desserts" },
+	// { _id: '53', name: "Món 53", image: food_53, price: 29, description: "Món ăn số 53.", category: "Desserts" },
+	// { _id: '54', name: "Món 54", image: food_54, price: 29, description: "Món ăn số 54.", category: "Desserts" },
+	// { _id: '55', name: "Món 55", image: food_55, price: 29, description: "Món ăn số 55.", category: "Desserts" },
+	// { _id: '56', name: "Món 56", image: food_56, price: 29, description: "Món ăn số 56.", category: "Desserts" },
+	// { _id: '57', name: "Món 57", image: food_57, price: 29, description: "Món ăn số 57.", category: "Desserts" },
+	// { _id: '58', name: "Món 58", image: food_58, price: 29, description: "Món ăn số 58.", category: "Desserts" },
+	// { _id: '59', name: "Món 59", image: food_59, price: 29, description: "Món ăn số 59.", category: "Desserts" },
+	// { _id: '60', name: "Món 60", image: food_60, price: 29, description: "Món ăn số 60.", category: "Desserts" },
+	// { _id: '61', name: "Món 61", image: food_61, price: 29, description: "Món ăn số 61.", category: "Desserts" },
+	// { _id: '62', name: "Món 62", image: food_62, price: 29, description: "Món ăn số 62.", category: "Desserts" },
+	// { _id: '63', name: "Món 63", image: food_63, price: 29, description: "Món ăn số 63.", category: "Desserts" },
+	// { _id: '64', name: "Món 64", image: food_64, price: 29, description: "Món ăn số 64.", category: "Desserts" },
+	// { _id: '65', name: "Món 65", image: food_65, price: 29, description: "Món ăn số 65.", category: "Desserts" },
+	// { _id: '66', name: "Món 66", image: food_66, price: 29, description: "Món ăn số 66.", category: "Desserts" },
+	// { _id: '67', name: "Món 67", image: food_67, price: 29, description: "Món ăn số 67.", category: "Desserts" },
+	// { _id: '68', name: "Món 68", image: food_68, price: 29, description: "Món ăn số 68.", category: "Desserts" },
+	// { _id: '69', name: "Món 69", image: food_69, price: 29, description: "Món ăn số 69.", category: "Desserts" },
+	// { _id: '70', name: "Món 70", image: food_70, price: 29, description: "Món ăn số 70.", category: "Desserts" }
+	
 ];
