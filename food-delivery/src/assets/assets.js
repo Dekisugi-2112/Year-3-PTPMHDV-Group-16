@@ -57,8 +57,9 @@ import add_icon_green from "./add_icon_green.png";
 import facebook_icon from "./facebook-icon.png";
 import twitter_icon from "./twitter-icon.png";
 import linkedIn_icon from "./linkedIn-icon.png";
-import play_store from "./play_store_icon.png"
-import app_store from "./apple_store_icon.png"
+import play_store from "./play_store_icon.png";
+import app_store from "./apple_store_icon.png";
+import cross_icon from "./cross_icon.png";
 
 export const asset = {
 	logo,
@@ -72,7 +73,8 @@ export const asset = {
 	twitter_icon,
 	linkedIn_icon,
 	play_store,
-	app_store
+	app_store,
+	cross_icon
 };
 
 export const menu_list = [
