@@ -43,7 +43,7 @@ const Fooditem = ({id, name, description, price, image}) => {
                     <img src={asset.rating_starts} alt="" />
                 </div>
                 <p className='food-item-desc'>{description}</p>
-                <p className="food-item-cart">${price}</p>
+                <p className="food-item-cart">{price.toLocaleString('vi-VN')}₫</p>
             </div>
         </div>
     )

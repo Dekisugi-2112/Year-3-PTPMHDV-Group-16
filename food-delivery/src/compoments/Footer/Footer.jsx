@@ -8,7 +8,10 @@ const Footer = () => {
         <div className="footer-content">
             <div className="footer-content-left">
                 <img src={asset.logo} alt="" style={{width: "200px", height: "100px"}}/>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <p>SheepFood mang đến trải nghiệm đặt món
+                    <br /> nhanh chóng, tiện lợi và đa dạng lựa chọn từ
+                    <br /> các quán gần bạn. Chúng tôi luôn ưu tiên chất
+                    <br /> lượng món ăn và sự hài lòng của toàn thể khách hàng.</p>
                 <div className="footer-social-icons">
                     <img src={asset.facebook_icon} alt="" />
                     <img src={asset.twitter_icon} alt="" />

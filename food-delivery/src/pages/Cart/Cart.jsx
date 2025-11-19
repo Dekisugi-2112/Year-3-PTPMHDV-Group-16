@@ -31,9 +31,9 @@ const Cart = () => {
                 <div className='cart-items-title cart-items-item'>
                   <img src={item.image} alt="" />
                   <p>{item.name}</p>
-                  <p>${item.price}</p>
+                  <p>{item.price.toLocaleString('vi-VN')}₫</p>
                   <p>{cartItems[item._id]}</p>
-                  <p>${item.price * cartItems[item._id]}</p>
+                  <p>{(item.price * cartItems[item._id]).toLocaleString('vi-VN')}₫</p>
                   <p onClick={() => removeFromCart(item._id)} className='cross' >x</p>
                 </div>
                 <hr />
@@ -51,19 +51,19 @@ const Cart = () => {
           <div>
             <div className="cart-total-details">
               <p>Tạm tính</p>
-              <p>{getTotalCartAmout()}₫</p>
+              <p>{getTotalCartAmout().toLocaleString('vi-VN')}₫</p>
             </div>
             <hr />
 
             <div className="cart-total-details">
               <p>Phí giao hàng</p>
-              <p>{16000}₫</p>
+              <p>{16000..toLocaleString('vi-VN')}₫</p>
             </div>
             <hr />
 
             <div className="cart-total-details">
               <b>Tổng cộng</b>
-              <b>{getTotalCartAmout()+16000}₫</b>
+              <p>{(getTotalCartAmout() + 16000).toLocaleString('vi-VN')}₫</p>
             </div>
           </div>
             <button onClick={()=>navigate('/order')}>ĐẾN TRANG THANH TOÁN</button>
