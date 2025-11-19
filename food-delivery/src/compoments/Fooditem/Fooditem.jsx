@@ -24,7 +24,7 @@ const Fooditem = ({id, name, description, price, image}) => {
                         {/* Đã SỬA lỗi chính tả: remove_icon_red */}
                         <img 
                             onClick={()=>removeFromCart(id)} 
-                            src={asset.remoce_icon_red} 
+                            src={asset.remove_icon_red} 
                             alt="Trừ" 
                         />
                         <p>{cartItems[id]}</p>

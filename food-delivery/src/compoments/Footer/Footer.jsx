@@ -17,20 +17,20 @@ const Footer = () => {
             </div>
 
             <div className="footer-content-center">
-                <h2>COMPANY</h2>
+                <h2>CÔNG TY</h2>
                 <ul>
-                    <li>Home</li>
-                    <li>About us</li>
-                    <li>Delivery</li>
-                    <li>Privacy policy</li>
+                    <li>Trang chủ</li>
+                    <li>Về chúng tôi</li>
+                    <li>Giao hàng</li>
+                    <li>Chính sách bảo mật</li>
                 </ul>
             </div>
 
             <div className="footer-content-right">
-                <h2>GET IN TOUCH</h2>
+                <h2>LIÊN HỆ</h2>
                 <ul>
-                    <li>+84-0865973704</li>
-                    <li>contact@tomato.com</li>
+                    <li>+84-0123456789</li>
+                    <li>contact@sheepfood.com</li>
                 </ul>
 
             </div>
@@ -38,7 +38,7 @@ const Footer = () => {
 
         </div>
         <hr />
-        <p className="footer-copyright">Copyright 2025 @ Tomato.com - All Right Reserved.</p>
+        <p className="footer-copyright">Copyright 2025 @ SheepFood.com - All Right Reserved.</p>
     </div>
   )
 }

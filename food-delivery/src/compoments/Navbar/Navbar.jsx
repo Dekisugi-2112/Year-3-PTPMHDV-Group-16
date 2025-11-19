@@ -10,10 +10,10 @@ const Navbar = ({setShowLogin}) => {
     <div className='navbar'>
         <Link to='/'><img src={asset.logo} alt="" className="logo" /></Link>
         <ul className="navbar-menu">
-            <Link to="/" onClick={()=>setMenu("home")} className={menu==="home"?"active":""}>Home</Link>
-            <a href='#explore-menu' onClick={()=>setMenu("menu")} className={menu==="menu"?"active":""}>Menu</a>
-            <a href='#app-download' onClick={()=>setMenu("mobile-app")} className={menu==="mobile-app"?"active":""}>Mobile-app</a>
-            <a href='#footer' onClick={()=>setMenu("contact-us")} className={menu==="contact-us"?"active":""}>Contact us</a>
+            <Link to="/" onClick={()=>setMenu("home")} className={menu==="home"?"active":""}>trang chủ</Link>
+            <a href='#explore-menu' onClick={()=>setMenu("menu")} className={menu==="menu"?"active":""}>menu</a>
+            <a href='#app-download' onClick={()=>setMenu("mobile-app")} className={menu==="mobile-app"?"active":""}>mobile-app</a>
+            <a href='#footer' onClick={()=>setMenu("contact-us")} className={menu==="contact-us"?"active":""}>liên hệ</a>
         </ul>
         <div className="navbar-right">
             <img src={asset.search_icon} alt="search-icon" className='img-icon'/>
@@ -21,7 +21,7 @@ const Navbar = ({setShowLogin}) => {
                 <Link to='/cart'><img src={asset.basket_icon} alt="" className='img-icon'/></Link>
                 <div className="dot"></div>
             </div>
-            <button onClick={()=>setShowLogin(true)}>sign in</button>
+            <button onClick={()=>setShowLogin(true)}>Đăng nhập</button>
         </div>
     </div>
   )

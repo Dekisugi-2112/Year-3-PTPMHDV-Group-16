@@ -15,12 +15,12 @@ const Cart = () => {
     <div className='cart'>
       <div className="cart-item">
         <div className="cart-items-title">
-          <p>Items</p>
-          <p>Title</p>
-          <p>Price</p>
-          <p>Quantity</p>
-          <p>Total</p>
-          <p>Remove</p>
+          <p>Món</p>
+          <p>Tên món</p>
+          <p>Giá</p>
+          <p>SL</p>
+          <p>Tổng</p>
+          <p>Xóa</p>
         </div>
         <br />
         <hr />
@@ -47,23 +47,23 @@ const Cart = () => {
       <div className="cart-bottom">
 
         <div className="cart-total">
-          <h2>Cart Totals</h2>
+          <h2>Giỏ hàng</h2>
           <div>
             <div className="cart-total-details">
-              <p>Subtotal</p>
-              <p>${getTotalCartAmout()}</p>
+              <p>Tạm tính</p>
+              <p>{getTotalCartAmout()}₫</p>
             </div>
             <hr />
 
             <div className="cart-total-details">
-              <p>Delivery Fee</p>
-              <p>${2}</p>
+              <p>Phí giao hàng</p>
+              <p>{16000}₫</p>
             </div>
             <hr />
 
             <div className="cart-total-details">
-              <b>Total</b>
-              <b>${getTotalCartAmout()+2}</b>
+              <b>Tổng cộng</b>
+              <b>{getTotalCartAmout()+16000}₫</b>
             </div>
           </div>
             <button onClick={()=>navigate('/order')}>ĐẾN TRANG THANH TOÁN</button>
@@ -71,10 +71,10 @@ const Cart = () => {
         </div>
         <div className="cart-promocode">
           <div>
-            <p>Nhập mã khuyến mãi (nếu có)</p>
+            <p>Nhập mã giảm giá (nếu có)</p>
             <div className="cart-promocode-input">
-              <input type="text" placeholder='promo code' />
-              <button>Submit</button>
+              <input type="text" placeholder='Nhập mã' />
+              <button>Áp dụng</button>
             </div>
           </div>
         </div>

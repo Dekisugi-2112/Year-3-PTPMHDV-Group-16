@@ -14,19 +14,19 @@ const LoginPopup = ({setShowLogin}) => {
                 <img onClick={()=>setShowLogin(false)} src={asset.cross_icon} alt="" />
             </div>
             <div className="login-popup-inputs">
-                {currState==="Login"?<></>:<input type="text" placeholder='Your name' required />}
+                {currState==="Login"?<></>:<input type="text" placeholder='Tên của bạn' required />}
                 
-                <input type="email" placeholder='Your email' required />
-                <input type="password" placeholder='Password' required />
+                <input type="email" placeholder='Email' required />
+                <input type="password" placeholder='Mật khẩu' required />
             </div>
-            <button>{currState==="Sign Up"?"Create account":"Login"}</button>
+            <button>{currState==="Sign Up"?"Tạo tài khoản":"Đăng nhập"}</button>
             <div className="login-popup-condition">
                 <input type="checkbox" required />
                 <p>Bằng cách tiếp tục, bạn đồng ý với Điều khoản sử dụng và Chính sách quyền riêng tư.</p>
             </div>
             {currState==="Login"
-            ?<p>Create a new account? <span onClick={()=>setCurrState("Sign Up")}>Click here</span></p>
-            :<p>Already have an account? <span onClick={()=>setCurrState("Login")}>Login here</span></p>
+            ?<p>Chưa có tài khoản? <span onClick={()=>setCurrState("Sign Up")}>Đăng ký</span></p>
+            :<p>Đã có tài khoản? <span onClick={()=>setCurrState("Login")}>Đăng nhập</span></p>
             }
             
         </form>
