@@ -32,20 +32,20 @@ const PlaceOrder = () => {
           <div>
             <div className="cart-total-details">
               <p>Tạm tính</p>
-              <p>{getTotalCartAmout()}₫</p>
+              <p>{getTotalCartAmout().toLocaleString('vi-VN')}₫</p>
             </div>
             <hr />
 
             {/* tao bien phi giao hang de phuc vu thay doi phi giao hang theo khoang cach giao */}
             <div className="cart-total-details">
               <p>Phí giao hàng</p>
-              <p>{16000}₫</p>
+              <p>{16000..toLocaleString('vi-VN')}₫</p>
             </div>
             <hr />
 
             <div className="cart-total-details">
               <b>Tổng cộng</b>
-              <b>{getTotalCartAmout()+16000}₫</b>
+              <b>{(getTotalCartAmout() + 16000).toLocaleString('vi-VN')}₫</b>
             </div>
           </div>
             <button>THANH TOÁN</button>
