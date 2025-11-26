@@ -18,3 +18,7 @@ app.get("/",(req, res)=>{
 app.listen(port,()=>{
     console.log(`Server Started on http://localhost:${port}`)
 })
+
+//mongodb+srv://nhom16_db_user:Nhom16@@clusterfooddelivery.6rmdsbi.mongodb.net/?
+
+//mongodb+srv://nhom16_db_user:Nhom16@@clusterfooddelivery.6rmdsbi.mongodb.net/?appName=ClusterFoodDelivery
