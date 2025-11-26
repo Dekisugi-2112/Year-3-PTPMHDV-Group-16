@@ -1,5 +1,7 @@
 import express from "express"
 import cors from "cors"
+import { connect } from "mongoose"
+import { connectDB } from "./config/db.js"
 
 
 
@@ -10,6 +12,11 @@ const port = 4000
 // middleware
 app.use(express.json())
 app.use(cors())
+
+// db connection
+connectDB();
+
+//api endpoints
 
 app.get("/",(req, res)=>{
     res.send("API Working")
@@ -22,3 +29,4 @@ app.listen(port,()=>{
 //mongodb+srv://nhom16_db_user:Nhom16@@clusterfooddelivery.6rmdsbi.mongodb.net/?
 
 //mongodb+srv://nhom16_db_user:Nhom16@@clusterfooddelivery.6rmdsbi.mongodb.net/?appName=ClusterFoodDelivery
+
