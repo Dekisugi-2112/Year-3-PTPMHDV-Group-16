@@ -152,56 +152,56 @@ export const food_list = [
         image: food_5,
         price: 350000,
         description: "Đồ ăn cung cấp đầy đủ dinh dưỡng, tốt cho sức khỏe mỗi ngày.",
-        category: "Rolls"
+        category: "Cuốn"
     }, {
         _id: "6",
         name: "Peri Peri Rolls",
         image: food_6,
         price: 300000,
         description: "Đồ ăn cung cấp đầy đủ dinh dưỡng, tốt cho sức khỏe mỗi ngày.",
-        category: "Rolls"
+        category: "Cuốn"
     }, {
         _id: "7",
         name: "Chicken Rolls",
         image: food_7,
         price: 500000,
         description: "Đồ ăn cung cấp đầy đủ dinh dưỡng, tốt cho sức khỏe mỗi ngày.",
-        category: "Rolls"
+        category: "Cuốn"
     }, {
         _id: "8",
         name: "Veg Rolls",
         image: food_8,
         price: 375000,
         description: "Đồ ăn cung cấp đầy đủ dinh dưỡng, tốt cho sức khỏe mỗi ngày.",
-        category: "Rolls"
+        category: "Cuốn"
     }, {
         _id: "9",
         name: "Ripple Ice Cream",
         image: food_9,
         price: 350000,
         description: "Đồ ăn cung cấp đầy đủ dinh dưỡng, tốt cho sức khỏe mỗi ngày.",
-        category: "Deserts"
+        category: "Cuốn"
     }, {
         _id: "10",
         name: "Fruit Ice Cream",
         image: food_10,
         price: 550000,
         description: "Đồ ăn cung cấp đầy đủ dinh dưỡng, tốt cho sức khỏe mỗi ngày.",
-        category: "Deserts"
+        category: "Tr. miệng"
     }, {
         _id: "11",
         name: "Jar Ice Cream",
         image: food_11,
         price: 250000,
         description: "Đồ ăn cung cấp đầy đủ dinh dưỡng, tốt cho sức khỏe mỗi ngày.",
-        category: "Deserts"
+        category: "Tr. miệng"
     }, {
         _id: "12",
         name: "Vanilla Ice Cream",
         image: food_12,
         price: 300000,
         description: "Đồ ăn cung cấp đầy đủ dinh dưỡng, tốt cho sức khỏe mỗi ngày.",
-        category: "Deserts"
+        category: "Tr. miệng"
     },
     {
         _id: "13",
@@ -238,56 +238,56 @@ export const food_list = [
         image: food_17,
         price: 350000,
         description: "Đồ ăn cung cấp đầy đủ dinh dưỡng, tốt cho sức khỏe mỗi ngày.",
-        category: "Cake"
+        category: "Bánh ngọt"
     }, {
         _id: "18",
         name: "Vegan Cake",
         image: food_18,
         price: 300000,
         description: "Đồ ăn cung cấp đầy đủ dinh dưỡng, tốt cho sức khỏe mỗi ngày.",
-        category: "Cake"
+        category: "Bánh ngọt"
     }, {
         _id: "19",
         name: "Butterscotch Cake",
         image: food_19,
         price: 500000,
         description: "Đồ ăn cung cấp đầy đủ dinh dưỡng, tốt cho sức khỏe mỗi ngày.",
-        category: "Cake"
+        category: "Bánh ngọt"
     }, {
         _id: "20",
         name: "Sliced Cake",
         image: food_20,
         price: 375000,
         description: "Đồ ăn cung cấp đầy đủ dinh dưỡng, tốt cho sức khỏe mỗi ngày.",
-        category: "Cake"
+        category: "Bánh ngọt"
     }, {
         _id: "21",
         name: "Garlic Mushroom ",
         image: food_21,
         price: 350000,
         description: "Đồ ăn cung cấp đầy đủ dinh dưỡng, tốt cho sức khỏe mỗi ngày.",
-        category: "Pure Veg"
+        category: "Chay"
     }, {
         _id: "22",
         name: "Fried Cauliflower",
         image: food_22,
         price: 550000,
         description: "Đồ ăn cung cấp đầy đủ dinh dưỡng, tốt cho sức khỏe mỗi ngày.",
-        category: "Pure Veg"
+        category: "Chay"
     }, {
         _id: "23",
         name: "Mix Veg Pulao",
         image: food_23,
         price: 250000,
         description: "Đồ ăn cung cấp đầy đủ dinh dưỡng, tốt cho sức khỏe mỗi ngày.",
-        category: "Pure Veg"
+        category: "Chay"
     }, {
         _id: "24",
         name: "Rice Zucchini",
         image: food_24,
         price: 300000,
         description: "Đồ ăn cung cấp đầy đủ dinh dưỡng, tốt cho sức khỏe mỗi ngày.",
-        category: "Pure Veg"
+        category: "Chay"
     },
     {
         _id: "25",
@@ -295,7 +295,7 @@ export const food_list = [
         image: food_25,
         price: 300000,
         description: "Đồ ăn cung cấp đầy đủ dinh dưỡng, tốt cho sức khỏe mỗi ngày.",
-        category: "Pasta"
+        category: "Mì Ý"
     },
     {
         _id: "26",
@@ -303,48 +303,48 @@ export const food_list = [
         image: food_26,
         price: 450000,
         description: "Đồ ăn cung cấp đầy đủ dinh dưỡng, tốt cho sức khỏe mỗi ngày.",
-        category: "Pasta"
+        category: "Mì Ý"
     }, {
         _id: "27",
         name: "Creamy Pasta",
         image: food_27,
         price: 400000,
         description: "Đồ ăn cung cấp đầy đủ dinh dưỡng, tốt cho sức khỏe mỗi ngày.",
-        category: "Pasta"
+        category: "Mì Ý"
     }, {
         _id: "28",
         name: "Chicken Pasta",
         image: food_28,
         price: 600000,
         description: "Đồ ăn cung cấp đầy đủ dinh dưỡng, tốt cho sức khỏe mỗi ngày.",
-        category: "Pasta"
+        category: "Mì Ý"
     }, {
         _id: "29",
         name: "Buttter Noodles",
         image: food_29,
         price: 350000,
         description: "Đồ ăn cung cấp đầy đủ dinh dưỡng, tốt cho sức khỏe mỗi ngày.",
-        category: "Noodles"
+        category: "Mì/Bún"
     }, {
         _id: "30",
         name: "Veg Noodles",
         image: food_30,
         price: 300000,
         description: "Đồ ăn cung cấp đầy đủ dinh dưỡng, tốt cho sức khỏe mỗi ngày.",
-        category: "Noodles"
+        category: "Mì/Bún"
     }, {
         _id: "31",
         name: "Somen Noodles",
         image: food_31,
         price: 500000,
         description: "Đồ ăn cung cấp đầy đủ dinh dưỡng, tốt cho sức khỏe mỗi ngày.",
-        category: "Noodles"
+        category: "Mì/Bún"
     }, {
         _id: "32",
         name: "Cooked Noodles",
         image: food_32,
         price: 375000,
         description: "Đồ ăn cung cấp đầy đủ dinh dưỡng, tốt cho sức khỏe mỗi ngày.",
-        category: "Noodles"
+        category: "Mì/Bún"
     }
 ]
