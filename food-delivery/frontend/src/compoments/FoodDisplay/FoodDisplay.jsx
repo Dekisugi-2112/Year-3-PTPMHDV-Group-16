@@ -5,7 +5,7 @@ import { food_list } from '../../assets/assets.js';
 import Fooditem from '../Fooditem/Fooditem.jsx';
 
 const FoodDisplay = ({category}) => {
-		const {dood_list} = useContext(StoreContext);
+		const {food_list} = useContext(StoreContext);
 	return (
 		<div className='food-display' id='food-display'>
 				<h2>Món ngon gần bạn</h2>

@@ -35,9 +35,12 @@ const StoreContextProvider = (props) => {
 		}
 		return totalAmout;
 			
-
-		
 	}
+	useEffect(()=>{
+		if(localStorage.getItem("token")){
+			setToken(localStorage.getItem("token"));
+		}
+	})
 
 	const contextValue = {
 	   food_list, 
