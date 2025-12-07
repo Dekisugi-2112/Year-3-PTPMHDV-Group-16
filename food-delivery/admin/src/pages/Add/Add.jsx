@@ -56,7 +56,7 @@ const Add = ({url}) => {
         {/* SỬA from -> form */}
         <form className="flex-col" onSubmit={onSubmitHandler}>
             <div className='add-img-upload flex-col'>
-                <p>Upload Image</p>
+                <p>Tải ảnh lên</p>
                 <label htmlFor="image">
                     <img  src={image?URL.createObjectURL(image):assets.upload_area} alt="" />
                 </label>
@@ -64,18 +64,18 @@ const Add = ({url}) => {
             </div>
 
             <div className='add-product-name flex-col'>
-                <p>Product name</p>
+                <p>Tên món</p>
                 {/* SỬA Tyoe -> Type */}
-                <input onChange={onChangeHandler} value={data.name} type="text" placeholder='Type here' name='name' />
+                <input onChange={onChangeHandler} value={data.name} type="text" placeholder='Nhập tên món' name='name' />
             </div>
 
             <div className='add-product-description flex-col'>
-                <p>Product description</p>
+                <p>Mô Tả</p>
                 <textarea
                 onChange={onChangeHandler} value={data.description}
                   name="description"
                   rows="6"
-                  placeholder='Write content here'
+                  placeholder='Nhập nội dung tại đây'
                 >
                 </textarea>
             </div>
@@ -83,28 +83,28 @@ const Add = ({url}) => {
             <div className="add-category-price">
                 {/* SỬA className nếu muốn viết đúng chính tả */}
                 <div className="add-category flex-col">
-                    <p>Product category</p>
+                    <p>Danh mục</p>
                     <select onChange={onChangeHandler} name="category">
                         <option value="Salad">Salad</option>
-                        <option value="Rolls">Rolls</option>
+                        <option value="Cuốn">Cuốn</option>
                         {/* SỬA Deserts -> Desserts */}
-                        <option value="Desserts">Desserts</option>
+                        <option value="Tr. miệng">Tr. miệng</option>
                         <option value="Sandwich">Sandwich</option>
-                        <option value="Cake">Cake</option>
-                        <option value="Pure Veg">Pure Veg</option>
-                        <option value="Pasta">Pasta</option>
-                        <option value="Noodles">Noodles</option>
+                        <option value="Bánh ngọt">Bánh ngọt</option>
+                        <option value="Chay">Chay</option>
+                        <option value="Mì Ý">Mì Ý</option>
+                        <option value="Mì/Bún">Mì/Bún</option>
                     </select>
                 </div>
 
                 <div className="add-price flex-col">
-                    <p>Product price</p>
+                    <p>Giá Bán</p>
                     {/* SỬA Number -> number */}
-                    <input onChange={onChangeHandler} value={data.price} type="number" name='price' placeholder='$20' />
+                    <input onChange={onChangeHandler} value={data.price} type="number" name='price' placeholder='VNĐ' />
                 </div>
             </div>
 
-            <button type='submit' className='add-btn'>ADD</button>
+            <button type='submit' className='add-btn'>Thêm món</button>
         </form>
     </div>
   )
