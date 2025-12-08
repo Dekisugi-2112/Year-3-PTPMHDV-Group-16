@@ -53,7 +53,7 @@ const Add = ({url}) => {
 
   return (
     <div className='add'>
-        {/* SỬA from -> form */}
+        
         <form className="flex-col" onSubmit={onSubmitHandler}>
             <div className='add-img-upload flex-col'>
                 <p>Tải ảnh lên</p>
@@ -65,7 +65,7 @@ const Add = ({url}) => {
 
             <div className='add-product-name flex-col'>
                 <p>Tên món</p>
-                {/* SỬA Tyoe -> Type */}
+               
                 <input onChange={onChangeHandler} value={data.name} type="text" placeholder='Nhập tên món' name='name' />
             </div>
 
@@ -81,7 +81,7 @@ const Add = ({url}) => {
             </div>
 
             <div className="add-category-price">
-                {/* SỬA className nếu muốn viết đúng chính tả */}
+                
                 <div className="add-category flex-col">
                     <p>Danh mục</p>
                     <select onChange={onChangeHandler} name="category">
@@ -99,7 +99,7 @@ const Add = ({url}) => {
 
                 <div className="add-price flex-col">
                     <p>Giá Bán</p>
-                    {/* SỬA Number -> number */}
+                   
                     <input onChange={onChangeHandler} value={data.price} type="number" name='price' placeholder='VNĐ' />
                 </div>
             </div>

@@ -37,7 +37,7 @@ const Navbar = ({setShowLogin}) => {
             :<div className='navbar-profile'>
                 <img src={asset.profile_icon} alt="" />
                 <ul className="nav-profile-dropdown">
-                    <li><img src={asset.bag_icon} alt="" /><p>Đơn hàng</p></li>
+                    <li onClick={()=>navigate('/myorders')}><img src={asset.bag_icon} alt="" /><p>Đơn hàng</p></li>
                     <hr />
                     <li onClick={logout}><img src={asset.logout_icon} alt="" /><p>Đăng xuất</p></li>
                 </ul>
