@@ -1,59 +1,110 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import './PlaceOrder.css'
 import { StoreContext } from '../../context/StoreContext'
+import axios from 'axios';
 
 const PlaceOrder = () => {
 
-    const {getTotalCartAmout} = useContext(StoreContext);
+  const { getTotalCartAmout, token, food_list, cartItems, url } = useContext(StoreContext);
+
+  const [data, setData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    street: "",
+    city: "",
+    state: "",
+    phone: ""
+  });
+
+  const onChangeHandler = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setData(data => ({ ...data, [name]: value }));
+  };
+
+  const placeOrder = async (event) => {
+    event.preventDefault();
+
+    let orderItems = [];
+    food_list.map((item) => {
+      if (cartItems[item._id] > 0) {
+        let itemInfo = { ...item };
+        itemInfo["quantity"] = cartItems[item._id];
+        orderItems.push(itemInfo);
+      }
+    });
+
+    // tổng tiền gửi server phải bao gồm phí ship
+    let orderData = {
+      address: data,
+      items: orderItems,
+      amount: getTotalCartAmout() + 16000
+    };
+
+    let response = await axios.post(url + "/api/order/place", orderData, { headers: { token } });
+
+    if (response.data.success) {
+      const { session_url } = response.data;
+      window.location.replace(session_url);
+    } else {
+      alert("Lỗi");
+    }
+  };
+
+  const SHIPPING_FEE = 16000;
 
   return (
-    <form className='place-order'>
+    <form onSubmit={placeOrder} className='place-order'>
       <div className="place-order-left">
         <p className="title">Thông tin giao hàng</p>
+
         <div className="multi-fields">
-          <input type="text" placeholder='Tên' />
-          <input type="text" placeholder='Họ đệm' />
+          <input required name='firstName' onChange={onChangeHandler} value={data.firstName} type="text" placeholder='Tên' />
+          <input required name="lastName" onChange={onChangeHandler} value={data.lastName} type="text" placeholder='Họ đệm' />
         </div>
-        <input type="email" placeholder='Email' />
-        <input type="text" placeholder='Số nhà, tên đường' />
+
+        <input required name='email' onChange={onChangeHandler} value={data.email} type="email" placeholder='Email' />
+
+        <input required name='street' onChange={onChangeHandler} value={data.street} type="text" placeholder='Số nhà, tên đường' />
+
         <div className="multi-fields">
-          <input type="text" placeholder='Tỉnh / Thành Phố (Cũ)' />
-          <input type="text" placeholder='Quận / Huyện (Cũ)' />
+          <input required name='city' onChange={onChangeHandler} value={data.city} type="text" placeholder='Tỉnh / Thành Phố (Cũ)' />
+          <input required name='state' onChange={onChangeHandler} value={data.state} type="text" placeholder='Quận / Huyện (Cũ)' />
         </div>
-        {/* <div className="multi-fields">
-          <input type="text" placeholder='Zip code' />
-          <input type="text" placeholder='Country' />
-        </div> */}
-        <input type="text" placeholder='Số điện thoại' />
+
+        <input required name='phone' onChange={onChangeHandler} value={data.phone} type="text" placeholder='Số điện thoại' />
       </div>
+
       <div className="place-order-right">
-          <div className="cart-total">
+        <div className="cart-total">
           <h2>Giỏ hàng</h2>
           <div>
             <div className="cart-total-details">
               <p>Tạm tính</p>
               <p>{getTotalCartAmout().toLocaleString('vi-VN')}₫</p>
             </div>
+
             <hr />
 
-            {/* tao bien phi giao hang de phuc vu thay doi phi giao hang theo khoang cach giao */}
             <div className="cart-total-details">
               <p>Phí giao hàng</p>
-              <p>{16000..toLocaleString('vi-VN')}₫</p>
+              <p>{(SHIPPING_FEE).toLocaleString('vi-VN')}₫</p>
             </div>
+
             <hr />
 
             <div className="cart-total-details">
               <b>Tổng cộng</b>
-              <b>{(getTotalCartAmout() + 16000).toLocaleString('vi-VN')}₫</b>
+              <b>{(getTotalCartAmout() + SHIPPING_FEE).toLocaleString('vi-VN')}₫</b>
             </div>
           </div>
-            <button>THANH TOÁN</button>
-          
+
+          <button type='submit'>THANH TOÁN</button>
         </div>
       </div>
     </form>
   )
 }
 
-export default PlaceOrder
+export default PlaceOrder;
