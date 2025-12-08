@@ -35,7 +35,7 @@ const PlaceOrder = () => {
       }
     });
 
-    // tổng tiền gửi server phải bao gồm phí ship
+    
     let orderData = {
       address: data,
       items: orderItems,

@@ -6,6 +6,7 @@ import Home from './pages/Home/Home'
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
 import Footer from './compoments/Footer/Footer'
 import LoginPopup from './compoments/LoginPopup/LoginPopup'
+import Verify from './pages/Verify/Verify'; 
 
 const App = () => {
 
@@ -20,6 +21,7 @@ const App = () => {
                     <Route path='/' element={<Home />} />
                     <Route path='/Cart' element={<Cart />} />
                     <Route path='/order' element={<PlaceOrder />} />
+                    <Route path='/verify' element={<Verify/>}/>
                 </Routes>
             </div>
             <Footer />
