@@ -1,53 +1,59 @@
-import foodModel from "../models/foodModel.js";
-import fs from 'fs'
+// ✅ Chỉ import các dịch vụ cần thiết
+import { addNewFood, getAllFood, deleteFood } from "../services/foodService.js";
 
-
-//add food item
-
-const addFood = async (req,res) => {
-
-    let image_filename = `${req.file.filename}`;
-
-    const food = new foodModel({
-        name:req.body.name,
-        description:req.body.description,
-        price:req.body.price,
-        category: req.body.category,
-        image:image_filename
-    })
+// add food item (Controller chỉ xử lý request/response)
+const addFood = async (req, res) => {
     try {
-        await food.save();
-        res.json({success:true,message:"Food Added"})
-    } catch (error) {
-        console.log(error)
-        res.json({success:false,message:"Error"})
-    }
-}
+        // Lấy tên file ảnh từ req.file và dữ liệu từ req.body (Xử lý request)
+        let image_filename = req.file.filename;
+        const foodData = req.body;
 
-//all food list
-const listFood = async (req,res) => {
-    try {
-        const foods = await foodModel.find({});
-        res.json({success:true,data:foods})
+        // GỌI DỊCH VỤ để xử lý logic thêm món ăn và lưu DB
+        const message = await addNewFood(foodData, image_filename);
+        
+        // Trả về response thành công
+        res.json({ success: true, message: message });
+
     } catch (error) {
+        // Bắt lỗi và trả về response thất bại
         console.log(error);
-        res.json({success:false,message:"Error"})
+        res.json({ success: false, message: error.message || "Error adding food" });
     }
 }
 
-// remove food item
-const removeFood = async (req,res) => {
+// all food list (Controller chỉ xử lý request/response)
+const listFood = async (req, res) => {
     try {
-        const food = await foodModel.findById(req.body.id);
-        fs.unlink(`uploads/${food.image}`,()=>{})
+        // GỌI DỊCH VỤ để lấy danh sách món ăn
+        const foods = await getAllFood(); 
+        
+        // Trả về response thành công
+        res.json({ success: true, data: foods });
 
-        await foodModel.findByIdAndDelete(req.body.id);
-        res.json({success:true,message:"Food Removed"})
     } catch (error) {
+        // Bắt lỗi và trả về response thất bại
         console.log(error);
-        res.json({success:false,message:"Error"})
+        res.json({ success: false, message: error.message || "Error fetching food list" });
+    }
+}
+
+// remove food item (Controller chỉ xử lý request/response)
+const removeFood = async (req, res) => {
+    try {
+        // Lấy ID món ăn từ req.body (Xử lý request)
+        const foodId = req.body.id;
+
+        // GỌI DỊCH VỤ để xử lý logic xóa món ăn và xóa file ảnh
+        const message = await deleteFood(foodId);
+
+        // Trả về response thành công
+        res.json({ success: true, message: message });
+    } catch (error) {
+        // Bắt lỗi và trả về response thất bại
+        console.log(error);
+        res.json({ success: false, message: error.message || "Error removing food" });
     }
 }
 
 
-export {addFood,listFood,removeFood}
+export { addFood, listFood, removeFood }

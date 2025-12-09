@@ -5,7 +5,8 @@ import { asset } from '../../assets/assets'
 const AppDownload = () => {
   return (
     <div className='app-download' id='app-download'>
-        <p><b>Ứng dụng SheepFood</b> <br/>cho trải nghiệm mobile mượt mà</p>
+        <p>Sử dụng <b>App ShopeeFood</b> <br /> để có nhiều giảm giá
+và trải nghiệm tốt hơn</p>
         <div className="app-dowload-platfroms">
             <img src={asset.play_store} alt="" />
             <img src={asset.app_store} alt="" />
