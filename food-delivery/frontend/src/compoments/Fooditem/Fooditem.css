@@ -1,6 +1,10 @@
 .food-item {
     width: 100%;
-    margin-top: auto;
+    /* sửa lỗi lệch chiều cao food item */
+    display: flex;
+    flex-direction: column;
+    /* đã comment lại code cũ "margin-top: auto để lỡ cần thì bỏ comment" */
+    /* margin-top: auto;*/
     border-radius: 15px;
     box-shadow: 0px, 0px, 10px #00000015;
     transition: 0.3s;

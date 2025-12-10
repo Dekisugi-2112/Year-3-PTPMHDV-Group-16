@@ -84,7 +84,7 @@ export const asset = {
 
 export const menu_list = [
     {
-        menu_name: "Salad",
+        menu_name: "Gỏi",
         menu_image: menu_1
     },
     {
@@ -96,7 +96,7 @@ export const menu_list = [
         menu_image: menu_3
     },
     {
-        menu_name: "Sandwich",
+        menu_name: "Bánh mì",
         menu_image: menu_4
     },
     {
@@ -108,7 +108,7 @@ export const menu_list = [
         menu_image: menu_6
     },
     {
-        menu_name: "Mì Ý",
+        menu_name: "Cơm",
         menu_image: menu_7
     },
     {

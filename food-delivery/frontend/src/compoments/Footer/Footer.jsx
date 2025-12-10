@@ -41,7 +41,7 @@ const Footer = () => {
 
         </div>
         <hr />
-        <p className="footer-copyright">Copyright 2025 @ SheepFood.com - All Right Reserved.</p>
+        <p className="footer-copyright">© 2025 - Bản quyền thuộc về Nhóm 16</p>
     </div>
   )
 }
