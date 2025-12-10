@@ -6,6 +6,12 @@
     justify-content: space-between;
     align-items: center;
     font-family: 'Phudu', cursive;
+
+    position: sticky; /* Hoặc 'sticky' nếu bạn muốn nó chỉ dính sau khi cuộn qua một điểm nào đó */
+    top: 0;          /* Đặt vị trí dính ở đỉnh màn hình */
+    width: 100%;     /* Đảm bảo nó chiếm toàn bộ chiều rộng */
+    z-index: 1000;   /* Đảm bảo nó luôn nằm trên các nội dung khác */
+    background-color: white; /* Rất quan trọng! Thêm màu nền để nội dung bên dưới không bị nhìn xuyên qua */
 }
 
 .navbar .logo {

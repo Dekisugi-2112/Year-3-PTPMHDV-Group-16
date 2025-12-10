@@ -7,6 +7,9 @@ import Orders from './pages/Order/Orders'
 import List from './pages/List/List'
 import { ToastContainer } from 'react-toastify';
 
+//new
+import Dashboard from './pages/Dashboard/Dashboard';
+
 
 const App = () => {
   const url="http://localhost:4000"
@@ -18,6 +21,8 @@ const App = () => {
       <div className="app-content">
         <Sidebar />
         <Routes>
+          <Route path="/" element={<Dashboard url={url}/>} /> 
+
           <Route path="/add" element={<Add url={url}/>} />
           <Route path="/list" element={<List url={url}/>} />
           <Route path="/orders" element={<Orders url={url}/>} />

@@ -21,6 +21,14 @@ const Sidebar = () => {
                 <img src={assets.order_icon} alt="" />
                 <p>Quản lý đơn hàng</p>
             </NavLink>
+
+            {/* 🛑 NAVLINK MỚI: DÀNH CHO DASHBOARD */}
+            {/* Link đến đường dẫn gốc "/", nơi bạn đã định tuyến Component Dashboard trong App.jsx */}
+            <NavLink to="/" className="sidebar-option">
+                {/* Bạn có thể dùng một icon bất kỳ, ví dụ: order_icon tạm thời hoặc icon Dashboard mới */}
+                <img src={assets.order_icon} alt="" /> 
+                <p>Doanh thu</p>
+            </NavLink>
         </div>
     </div>
   )
