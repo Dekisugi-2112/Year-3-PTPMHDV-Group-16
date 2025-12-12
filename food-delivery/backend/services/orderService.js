@@ -87,14 +87,14 @@ const placeOrderLogic = async (data) => {
     }));
 
     // Thêm phí giao hàng
-    line_items.push({
-        price_data: {
-            currency: "usd",
-            product_data: { name: "Phí giao hàng" },
-            unit_amount: Math.round(16000 / VND_TO_USD * 100)
-        },
-        quantity: 1
-    });
+    // line_items.push({
+    //     price_data: {
+    //         currency: "usd",
+    //         product_data: { name: "Phí giao hàng" },
+    //         unit_amount: Math.round(16000 / VND_TO_USD * 100)
+    //     },
+    //     quantity: 1
+    // });
 
     // 4. Tạo phiên thanh toán Stripe
     const session = await stripe.checkout.sessions.create({

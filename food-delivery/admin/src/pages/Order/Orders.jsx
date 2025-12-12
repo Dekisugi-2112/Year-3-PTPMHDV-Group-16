@@ -49,19 +49,23 @@ const Order = ({url}) => {
                   }
                 })}
               </p>
-              <p className="order-item-name">
-                {order.address.firstName+" "+order.address.lastName}
-              </p>
-              <div className="order-item-address" >
-                <p>
-                  {order.address.street+" , "}
-                </p>
-                <p>
-                  {order.address.city+" , "+order.address.street+" , "+order.address.country}
-                </p>
-              </div>
-              <p className='order-item-phone'>{order.address.phone}</p>
-            </div>
+
+              <p className="order-item-name">
+                Khách hàng: {order.address.name}
+              </p>
+              <div className="order-item-address" >
+                <p>
+                  Hình thức: 
+                    {/* Kiểm tra giá trị orderType để hiển thị dễ đọc hơn */}
+                    {order.address.orderType === 'eat-in' ? 'Dùng tại quán' : 'Mang đi (Take-away)'}
+                </p>
+                <p>
+                    SĐT: {order.address.phone}
+                </p>
+              </div>
+              {/* ĐÃ BỎ DÒNG order-item-phone vì đã hiển thị ở trên */}
+            </div>
+
             <p>Số món: {order.items.length}</p>
             <p>Giá: {order.amount} vnd</p>
             <select onChange={(event)=>statusHandler(event,order._id)} value={order.status}>
