@@ -8,8 +8,8 @@ const Navbar = ({setShowLogin}) => {
 
     const [menu, setMenu] = useState("home");
 
-    const {getTotalCartAmount,token,setToken} = useContext(StoreContext);
-
+    // them setSearchTerm tu context
+    const {getTotalCartAmount, token, setToken, setSearchTerm} = useContext(StoreContext);
     const navigate = useNavigate();
 
     const logout = () =>{
@@ -28,7 +28,28 @@ const Navbar = ({setShowLogin}) => {
             <a href='#footer' onClick={()=>setMenu("contact-us")} className={menu==="contact-us"?"active":""}>liên hệ</a>
         </ul>
         <div className="navbar-right">
-            <img src={asset.search_icon} alt="search-icon" className='img-icon'/>
+            {/* 2. SỬA ĐOẠN ICON SEARCH THÀNH KHỐI TÌM KIẾM */}
+            <div className="navbar-search-container">
+                <input 
+                    type="text" 
+                    placeholder="Tìm món ăn..." 
+                    onChange={(e) => {
+                        setSearchTerm(e.target.value); // 1. Lưu từ khóa
+                        navigate('/'); // 2. Đảm bảo đang ở trang chủ
+                        
+                        // 3. THÊM ĐOẠN NÀY ĐỂ TỰ TRƯỢT XUỐNG
+                        // Bro nên trượt tới 'food-display' (chỗ hiện món) sẽ hợp lý hơn là 'explore-menu' (chỗ danh mục)
+                        // Nếu vẫn thích 'explore-menu' thì đổi id trong ngoặc đơn nhé
+                        const element = document.getElementById('food-display'); 
+                        if (element) {
+                            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }}
+                    className="search-input"
+                />
+                <img src={asset.search_icon} alt="search-icon" className='search-icon-img'/>
+            </div>
+
             <div className="navbar-search-icon">
                 <Link to='/cart'><img src={asset.basket_icon} alt="" className='img-icon'/></Link>
                 <div className="dot"></div>

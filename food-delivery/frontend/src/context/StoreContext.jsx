@@ -10,6 +10,7 @@ const StoreContextProvider = (props) => {
 	const url="http://localhost:4000"
 	const[token,setToken]=useState("");
 	const [food_list, setFoodList] = useState([]);
+	const [searchTerm, setSearchTerm] = useState("");
 
 	const addToCart = async (itemId) => {
 		if (!cartItems[itemId]) {
@@ -65,15 +66,17 @@ const StoreContextProvider = (props) => {
 	},[])
 
 	const contextValue = {
-	   food_list, 
-	   cartItems,
-	   setCartItems,
-	   addToCart,
-	   removeFromCart,
-	   getTotalCartAmout,
-	   url,
-	   token,
-	   setToken
+		food_list, 
+		cartItems,
+		setCartItems,
+		addToCart,
+		removeFromCart,
+		getTotalCartAmout,
+		url,
+		token,
+		setToken,
+		searchTerm,		// Export biến này
+		setSearchTerm   // Export hàm này
 	}
 
 	

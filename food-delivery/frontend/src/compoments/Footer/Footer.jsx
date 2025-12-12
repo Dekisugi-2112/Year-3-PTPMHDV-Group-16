@@ -8,13 +8,13 @@ const Footer = () => {
         <div className="footer-content">
             <div className="footer-content-left">
                 <img src={asset.logo} alt="" style={{width: "200px", height: "100px"}}/>
-                <p>SheepFood mang đến trải nghiệm đặt món
-                    <br /> nhanh chóng, tiện lợi và đa dạng lựa chọn từ
-                    <br /> các quán gần bạn. Chúng tôi luôn ưu tiên chất
+                <p>SheepFood Kiosk mang đến trải nghiệm chọn
+                    <br /> món nhanh chóng, tiện lợi và đa dạng lựa chọn
+                    <br />  các món ăn Việt. Chúng tôi luôn ưu tiên chất
                     <br /> lượng món ăn và sự hài lòng của toàn thể khách hàng.</p>
                 <div className="footer-social-icons">
                     <img src={asset.facebook_icon} alt="" />
-                    <img src={asset.twitter_icon} alt="" />
+                    <img src={asset.instagram_icon} alt="" />
                     <img src={asset.linkedIn_icon} alt="" />
                 </div>
             </div>

@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 function PlaceOrder() {
 
   const { getTotalCartAmout, token, food_list, cartItems, url } = useContext(StoreContext);
+  const [paymentMethod, setPaymentMethod] = useState("momo_wallet"); // Mặc định là Ví MoMo
 
   const [data, setData] = useState({
     orderType: "eat-in",
@@ -35,7 +36,8 @@ function PlaceOrder() {
     let orderData = {
       address: data,
       items: orderItems,
-      amount: getTotalCartAmout()
+      amount: getTotalCartAmout(),
+      paymentMethod: paymentMethod // <--- GỬI THÊM CÁI NÀY
     };
 
     let response = await axios.post(url + "/api/order/place", orderData, { headers: { token } });
@@ -66,7 +68,7 @@ function PlaceOrder() {
         <p className="title">Thông tin giao hàng</p>
 
         <div className="order-type">
-
+    
           <label>
             <input
               type="radio"
@@ -89,6 +91,42 @@ function PlaceOrder() {
             <span>Mang đi (Take-away)</span>
           </label>
 
+        </div>
+
+        <div className="payment-options">
+            <h4>Chọn phương thức thanh toán:</h4>
+            <label>
+                <input 
+                    type="radio" 
+                    name="paymentMethod" 
+                    value="momo_wallet" 
+                    checked={paymentMethod === "momo_wallet"}
+                    onChange={(e) => setPaymentMethod(e.target.value)}
+                /> 
+                Ví MoMo (Quét QR)
+            </label>
+            <br/>
+            <label>
+                <input 
+                    type="radio" 
+                    name="paymentMethod" 
+                    value="momo_atm" 
+                    checked={paymentMethod === "momo_atm"}
+                    onChange={(e) => setPaymentMethod(e.target.value)}
+                /> 
+                Thẻ ATM Nội địa
+            </label>
+            <br/>
+            <label>
+                <input 
+                    type="radio" 
+                    name="paymentMethod" 
+                    value="momo_cc" 
+                    checked={paymentMethod === "momo_cc"}
+                    onChange={(e) => setPaymentMethod(e.target.value)}
+                /> 
+                Thẻ Visa/Mastercard
+            </label>
         </div>
 
         <input required name='name' onChange={onChangeHandler} value={data.name} type="text" placeholder='Tên khách hàng' />

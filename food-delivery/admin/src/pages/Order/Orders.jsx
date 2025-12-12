@@ -36,46 +36,54 @@ const Order = ({url}) => {
     <div className='order add'>
       <h3>Trang đặt hàng</h3>
       <div className="order-list">
-        {orders.map((order,index)=>(
-          <div key={index} className='order-item'>
-            <img src={assets.parcel_icon} alt=""/>
-            <div>
-              <p className='order-item-food'>
-                {order.items.map((item,index)=>{
-                  if(index===order.items.length-1){
-                    return item.name+ " x "+item.quantity
-                  }else{
-                    return item.name+" x " + item.quantity+" , "
-                  }
-                })}
-              </p>
-
-              <p className="order-item-name">
-                Khách hàng: {order.address.name}
-              </p>
-              <div className="order-item-address" >
-                <p>
-                  Hình thức: 
-                    {/* Kiểm tra giá trị orderType để hiển thị dễ đọc hơn */}
-                    {order.address.orderType === 'eat-in' ? 'Dùng tại quán' : 'Mang đi (Take-away)'}
-                </p>
-                <p>
-                    SĐT: {order.address.phone}
-                </p>
-              </div>
-              {/* ĐÃ BỎ DÒNG order-item-phone vì đã hiển thị ở trên */}
-            </div>
-
-            <p>Số món: {order.items.length}</p>
-            <p>Giá: {order.amount} vnd</p>
-            <select onChange={(event)=>statusHandler(event,order._id)} value={order.status}>
-              <option value="Food Processing">Đang chế biến</option>
-              <option value="Out for delivery">Đang giao hàng</option>
-              <option value="Delivered">Đã giao hàng</option>
-            </select>
-            </div>
+        {orders.map((order, index) => {  // <--- 1. ĐỔI DẤU '(' THÀNH '{' Ở ĐÂY
           
-        ))}
+          // --- 2. THÊM ĐOẠN KIỂM TRA NÀY ---
+          // Nếu payment là false (chưa trả tiền) thì return null (không hiện gì cả)
+          if (!order.payment) {
+            return null; 
+          }
+          // ---------------------------------
+
+          // 3. THÊM TỪ KHÓA 'return' Ở ĐÂY ĐỂ TRẢ VỀ JSX
+          return (
+            <div key={index} className='order-item'>
+              <img src={assets.parcel_icon} alt="" />
+              <div>
+                <p className='order-item-food'>
+                  {order.items.map((item, index) => {
+                    if (index === order.items.length - 1) {
+                      return item.name + " x " + item.quantity
+                    } else {
+                      return item.name + " x " + item.quantity + " , "
+                    }
+                  })}
+                </p>
+
+                <p className="order-item-name">
+                  Khách hàng: {order.address.name}
+                </p>
+                <div className="order-item-address" >
+                  <p>
+                    Hình thức:
+                    {order.address.orderType === 'eat-in' ? 'Dùng tại quán' : 'Mang đi (Take-away)'}
+                  </p>
+                  <p>
+                    SĐT: {order.address.phone}
+                  </p>
+                </div>
+              </div>
+
+              <p>Số món: {order.items.length}</p>
+              <p>Giá: {order.amount} vnd</p>
+              <select onChange={(event) => statusHandler(event, order._id)} value={order.status}>
+                <option value="Food Processing">Đang chế biến</option>
+                <option value="Out for delivery">Đang giao hàng</option>
+                <option value="Delivered">Đã giao hàng</option>
+              </select>
+            </div>
+          ) // <--- ĐÓNG NGOẶC CỦA RETURN
+        })} {/* <--- ĐÓNG NGOẶC CỦA MAP */}
       </div>
     </div>
   )

@@ -1,83 +1,189 @@
+/* Container chính */
 .place-order {
     display: flex;
-    align-items: start;
+    align-items: flex-start; /* Sửa thành flex-start cho chuẩn */
     justify-content: space-between;
     gap: 50px;
-    margin-top: 100px;
+    margin-top: 80px;
+    padding: 0 20px; /* Thêm padding để không sát mép màn hình */
 }
 
+/* --- CỘT TRÁI (THÔNG TIN) --- */
 .place-order-left {
     width: 100%;
     max-width: max(30%, 500px);
 }
 
 .place-order-left .title {
-    font-size: 30px;
-    font-weight: 600;
-    margin-bottom: 50px;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #333;
+    position: relative;
 }
 
+/* Thêm gạch chân nhỏ dưới tiêu đề cho đẹp */
+.place-order-left .title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 50px;
+    height: 3px;
+    background-color: tomato;
+    border-radius: 2px;
+}
+
+/* Style cho các ô Input */
 .place-order-left input {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     width: 100%;
-    padding: 10px;
-    border: 1px solid #c5c5c5;
-    border-radius: 4px;
-    outline-color: tomato;
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    outline: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+/* Hiệu ứng khi click vào ô Input */
+.place-order-left input:focus {
+    border-color: tomato;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(255, 99, 71, 0.15); /* Shadow màu tomato nhẹ */
 }
 
 .place-order-left .multi-fields {
     display: flex;
-    gap: 10px;
+    gap: 15px;
 }
 
+/* --- PHẦN CHỌN LOẠI ĐƠN & THANH TOÁN --- */
+/* Dùng chung style cho cả Order Type và Payment Options */
+.place-order-left .order-type, 
+.place-order-left .payment-options {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+/* Tiêu đề nhỏ trong các box lựa chọn */
+.place-order-left .payment-options h4 {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #555;
+    font-weight: 600;
+}
+
+/* Style cho từng dòng lựa chọn (Label) */
+.place-order-left .order-type label,
+.place-order-left .payment-options label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    color: #444;
+    transition: 0.2s;
+    padding: 8px 0;
+}
+
+/* Hiệu ứng khi di chuột vào dòng lựa chọn */
+.place-order-left .order-type label:hover,
+.place-order-left .payment-options label:hover {
+    color: tomato;
+}
+
+/* Custom Radio Button - sau sửa */
+.place-order-left input[type="radio"] {
+    width: 8px;
+    height: 8px;
+    margin: 0;
+    cursor: pointer;
+    border: 1.5px solid #ccc;
+    border-radius: 50%;
+    outline: none;
+    appearance: none; /* Xóa style mặc định */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    transition: all 0.2s ease;
+    background-color: white;
+}
+
+/* Khi Radio được chọn */
+.place-order-left input[type="radio"]:checked {
+    border: 5px solid tomato; /* Tạo hiệu ứng chấm tròn ở giữa */
+    transform: scale(1); /* Phóng to nhẹ khi chọn */
+}
+
+
+/* --- CỘT PHẢI (GIỎ HÀNG) --- */
 .place-order-right {
     width: 100%;
-    max-width: max(40%, 500px);
+    max-width: max(40%, 400px);
+}
+
+.place-order .cart-total {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Shadow nổi khối */
+    border: 1px solid #eee;
+}
+
+.place-order .cart-total h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #333;
 }
 
 .place-order .cart-total button {
     margin-top: 30px;
-}
-
-/* Thêm CSS cho phần lựa chọn Order Type */
-.place-order-left .order-type {
-    margin-bottom: 25px; /* Khoảng cách với các ô input bên dưới */
-}
-
-/* Định kiểu cho mỗi lựa chọn radio button */
-.place-order-left .order-type label {
-    display: flex; /* Dùng flexbox để căn chỉnh radio và text */
-    align-items: center; /* Căn giữa theo chiều dọc */
-    gap: 10px; /* Khoảng cách giữa radio button và text */
-    margin-bottom: 15px; /* Khoảng cách giữa 2 lựa chọn */
-    cursor: pointer; /* Cho biết đây là vùng có thể click */
-    font-size: 16px; /* Kích thước chữ */
-    color: #333;
-}
-
-/* Định kiểu cho input radio */
-.place-order-left .order-type input[type="radio"] {
-    width: 20px; /* Chiều rộng lớn hơn */
-    height: 20px; /* Chiều cao lớn hơn */
-    margin: 0; /* Bỏ margin mặc định */
+    width: 100%;
+    padding: 15px 0;
+    background-color: tomato;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 16px;
     cursor: pointer;
-    border: 2px solid #ccc; /* Thêm viền */
-    -webkit-appearance: none; /* Bỏ kiểu mặc định trên Webkit */
-    -moz-appearance: none; /* Bỏ kiểu mặc định trên Firefox */
-    appearance: none; /* Bỏ kiểu mặc định */
-    border-radius: 50%; /* Làm cho radio button tròn */
-    position: relative;
-    outline: none;
-    transition: border 0.2s ease;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-/* Khi radio button được chọn */
-.place-order-left .order-type input[type="radio"]:checked {
-    border: 6px solid tomato; /* Màu viền đậm hơn khi được chọn */
+.place-order .cart-total button:hover {
+    background-color: #e0462e; /* Màu đậm hơn khi hover */
+    transform: translateY(-2px); /* Nhấc nút lên nhẹ */
+    box-shadow: 0 4px 10px rgba(224, 70, 46, 0.3);
 }
 
-/* Ẩn dấu check mặc định và dùng pseudo-element */
-/* Thay vì dùng pseudo-element, cách trên (thay đổi border) đơn giản và đẹp hơn cho trường hợp này */
+/* --- RESPONSIVE (MOBILE) --- */
+@media (max-width: 750px) {
+    .place-order {
+        flex-direction: column; /* Xếp chồng lên nhau trên mobile */
+        margin-top: 50px;
+    }
 
-/* Cần đảm bảo các input khác vẫn giữ được kiểu cũ, nên mình giữ nguyên các style đã có và thêm mới */
+    .place-order-left, 
+    .place-order-right {
+        max-width: 100%; /* Full màn hình */
+    }
+
+    .place-order .cart-total button {
+        position: fixed; /* Ghim nút thanh toán xuống đáy (tùy chọn) */
+        bottom: 0;
+        left: 0;
+        border-radius: 0;
+        z-index: 100;
+        margin: 0;
+    }
+    
+    /* Nếu không thích ghim nút thì bỏ đoạn position fixed đi nhé */
+}
