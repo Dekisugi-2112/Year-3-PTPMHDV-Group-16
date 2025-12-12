@@ -29,14 +29,29 @@
     font-size: 1vw;
 }
 
-.header-contents button {
+/* Selector mới cho thẻ <a> (menu-button) */
+.header-contents .menu-button {
+    /* Các thuộc tính cơ bản giữ nguyên */
     border: none;
-    color: #747474;
-    font-weight: 500;
+    font-weight: 700; 
+    color: #555; 
     padding: 1vw 2.3vw;
     background-color: white;
     font-size: max(1vw, 13px);
     border-radius: 50px;
+    cursor: pointer; 
+    text-decoration: none; 
+    display: inline-block; 
+    transition: 0.3s; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+}
+
+/* Hiệu ứng khi di chuột vào (HOVER) - ĐÃ ĐỔI MÀU */
+.header-contents .menu-button:hover {
+    background-color: #CC0000; /* Màu Đỏ Sẫm */
+    color: white; /* Giữ màu chữ trắng */
+    /* Thêm shadow mạnh hơn khi hover */
+    box-shadow: 0 6px 15px rgba(204, 0, 0, 0.5); 
 }
 
 @media (max-width:1050px) {

@@ -53,17 +53,12 @@ const Cart = () => {
               <p>Tạm tính</p>
               <p>{getTotalCartAmout().toLocaleString('vi-VN')}₫</p>
             </div>
-            <hr />
-
-            <div className="cart-total-details">
-              <p>Phí giao hàng</p>
-              <p>{16000..toLocaleString('vi-VN')}₫</p>
-            </div>
+            
             <hr />
 
             <div className="cart-total-details">
               <b>Tổng cộng</b>
-              <p>{(getTotalCartAmout() + 16000).toLocaleString('vi-VN')}₫</p>
+              <p>{getTotalCartAmout().toLocaleString('vi-VN')}₫</p>
             </div>
           </div>
             <button onClick={()=>navigate('/order')}>ĐẾN TRANG THANH TOÁN</button>

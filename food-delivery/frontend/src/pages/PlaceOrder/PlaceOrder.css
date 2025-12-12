@@ -39,3 +39,45 @@
 .place-order .cart-total button {
     margin-top: 30px;
 }
+
+/* Thêm CSS cho phần lựa chọn Order Type */
+.place-order-left .order-type {
+    margin-bottom: 25px; /* Khoảng cách với các ô input bên dưới */
+}
+
+/* Định kiểu cho mỗi lựa chọn radio button */
+.place-order-left .order-type label {
+    display: flex; /* Dùng flexbox để căn chỉnh radio và text */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    gap: 10px; /* Khoảng cách giữa radio button và text */
+    margin-bottom: 15px; /* Khoảng cách giữa 2 lựa chọn */
+    cursor: pointer; /* Cho biết đây là vùng có thể click */
+    font-size: 16px; /* Kích thước chữ */
+    color: #333;
+}
+
+/* Định kiểu cho input radio */
+.place-order-left .order-type input[type="radio"] {
+    width: 20px; /* Chiều rộng lớn hơn */
+    height: 20px; /* Chiều cao lớn hơn */
+    margin: 0; /* Bỏ margin mặc định */
+    cursor: pointer;
+    border: 2px solid #ccc; /* Thêm viền */
+    -webkit-appearance: none; /* Bỏ kiểu mặc định trên Webkit */
+    -moz-appearance: none; /* Bỏ kiểu mặc định trên Firefox */
+    appearance: none; /* Bỏ kiểu mặc định */
+    border-radius: 50%; /* Làm cho radio button tròn */
+    position: relative;
+    outline: none;
+    transition: border 0.2s ease;
+}
+
+/* Khi radio button được chọn */
+.place-order-left .order-type input[type="radio"]:checked {
+    border: 6px solid tomato; /* Màu viền đậm hơn khi được chọn */
+}
+
+/* Ẩn dấu check mặc định và dùng pseudo-element */
+/* Thay vì dùng pseudo-element, cách trên (thay đổi border) đơn giản và đẹp hơn cho trường hợp này */
+
+/* Cần đảm bảo các input khác vẫn giữ được kiểu cũ, nên mình giữ nguyên các style đã có và thêm mới */

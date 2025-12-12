@@ -8,12 +8,8 @@ function PlaceOrder() {
   const { getTotalCartAmout, token, food_list, cartItems, url } = useContext(StoreContext);
 
   const [data, setData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    street: "",
-    city: "",
-    state: "",
+    orderType: "eat-in",
+    name: "",
     phone: ""
   });
 
@@ -39,7 +35,7 @@ function PlaceOrder() {
     let orderData = {
       address: data,
       items: orderItems,
-      amount: getTotalCartAmout() + 16000
+      amount: getTotalCartAmout()
     };
 
     let response = await axios.post(url + "/api/order/place", orderData, { headers: { token } });
@@ -62,26 +58,40 @@ function PlaceOrder() {
     }
   }, [token]);
 
-  const SHIPPING_FEE = 16000;
+  // const SHIPPING_FEE = 16000;
 
   return (
     <form onSubmit={placeOrder} className='place-order'>
       <div className="place-order-left">
         <p className="title">Thông tin giao hàng</p>
 
-        <div className="multi-fields">
-          <input required name='firstName' onChange={onChangeHandler} value={data.firstName} type="text" placeholder='Tên' />
-          <input required name="lastName" onChange={onChangeHandler} value={data.lastName} type="text" placeholder='Họ đệm' />
+        <div className="order-type">
+
+          <label>
+            <input
+              type="radio"
+              name="orderType"
+              value="eat-in"
+              checked={data.orderType === "eat-in"}
+              onChange={onChangeHandler}
+            />
+            <span>Dùng tại quán (Eat-in)</span>
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              name="orderType"
+              value="take-away"
+              checked={data.orderType === "take-away"}
+              onChange={onChangeHandler}
+            />
+            <span>Mang đi (Take-away)</span>
+          </label>
+
         </div>
 
-        <input required name='email' onChange={onChangeHandler} value={data.email} type="email" placeholder='Email' />
-
-        <input required name='street' onChange={onChangeHandler} value={data.street} type="text" placeholder='Số nhà, tên đường' />
-
-        <div className="multi-fields">
-          <input required name='city' onChange={onChangeHandler} value={data.city} type="text" placeholder='Tỉnh / Thành Phố (Cũ)' />
-          <input required name='state' onChange={onChangeHandler} value={data.state} type="text" placeholder='Quận / Huyện (Cũ)' />
-        </div>
+        <input required name='name' onChange={onChangeHandler} value={data.name} type="text" placeholder='Tên khách hàng' />
 
         <input required name='phone' onChange={onChangeHandler} value={data.phone} type="text" placeholder='Số điện thoại' />
       </div>
@@ -98,15 +108,8 @@ function PlaceOrder() {
             <hr />
 
             <div className="cart-total-details">
-              <p>Phí giao hàng</p>
-              <p>{(SHIPPING_FEE).toLocaleString('vi-VN')}₫</p>
-            </div>
-
-            <hr />
-
-            <div className="cart-total-details">
               <b>Tổng cộng</b>
-              <b>{(getTotalCartAmout() + SHIPPING_FEE).toLocaleString('vi-VN')}₫</b>
+              <b>{getTotalCartAmout().toLocaleString('vi-VN')}₫</b>
             </div>
           </div>
 
