@@ -8,6 +8,9 @@ const Navbar = ({setShowLogin}) => {
 
     const [menu, setMenu] = useState("home");
 
+    // them state để quan ly show/hide searchbar
+    const [showSearch, setShowSearch] = useState(false);
+
     // them setSearchTerm tu context
     const {getTotalCartAmount, token, setToken, setSearchTerm} = useContext(StoreContext);
     const navigate = useNavigate();
@@ -29,7 +32,8 @@ const Navbar = ({setShowLogin}) => {
         </ul>
         <div className="navbar-right">
             {/* 2. SỬA ĐOẠN ICON SEARCH THÀNH KHỐI TÌM KIẾM */}
-            <div className="navbar-search-container">
+            {/* them class active neu showSearch = true */}
+            <div className={`navbar-search-container ${showSearch ? "active" : ""}`}>
                 <input 
                     type="text" 
                     placeholder="Tìm món ăn..." 
@@ -47,7 +51,12 @@ const Navbar = ({setShowLogin}) => {
                     }}
                     className="search-input"
                 />
-                <img src={asset.search_icon} alt="search-icon" className='search-icon-img'/>
+                <img 
+                    src={asset.search_icon} 
+                    alt="search-icon" 
+                    className='search-icon-img'
+                    onClick={() => setShowSearch(!showSearch)} 
+                />
             </div>
 
             <div className="navbar-search-icon">

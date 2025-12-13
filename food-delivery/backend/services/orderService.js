@@ -151,7 +151,8 @@ const placeOrderLogic = async (data) => {
 
 // DỊCH VỤ 5: Xác minh thanh toán
 const verifyOrderLogic = async (orderId, isSuccess) => {
-    if(isSuccess === "true"){
+    // 👇 SỬA DÒNG NÀY: Chấp nhận cả "true" (string), true (boolean), "0" (MoMo string), 0 (MoMo number)
+    if (isSuccess === "true" || isSuccess === true || isSuccess === "0" || isSuccess === 0) {
         // Nếu thành công: Cập nhật trạng thái thanh toán
         await orderModel.findByIdAndUpdate(orderId,{payment:true});
         return "Paid";
