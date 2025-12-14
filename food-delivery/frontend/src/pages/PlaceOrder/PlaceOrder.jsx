@@ -43,7 +43,13 @@ function PlaceOrder() {
     let response = await axios.post(url + "/api/order/place", orderData, { headers: { token } });
 
     if (response.data.success) {
-      const { session_url } = response.data;
+      const { session_url, orderId } = response.data;
+
+      // lưu giữ chỗ cho guest không đnhập vào LocalStorage
+      let currentOrders = JSON.parse(localStorage.getItem("my_kiosk_orders") || "[]");
+      currentOrders.push(orderId);
+      localStorage.setItem("my_kiosk_orders", JSON.stringify(currentOrders));
+
       window.location.replace(session_url);
     } else {
       alert("Lỗi");
@@ -52,13 +58,13 @@ function PlaceOrder() {
 
   const navigate = useNavigate();
   useEffect(() => {
-    if (!token) {
+    // if (!token) {
+    //   navigate('/cart');
+    // }
+    if (getTotalCartAmout() === 0) {
       navigate('/cart');
     }
-    else if (getTotalCartAmout() === 0) {
-      navigate('/cart');
-    }
-  }, [token]);
+  }, [token, getTotalCartAmout]);
 
   // const SHIPPING_FEE = 16000;
 

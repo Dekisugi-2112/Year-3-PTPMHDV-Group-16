@@ -139,7 +139,10 @@ const placeOrderLogic = async (data) => {
         
         if (response.data && response.data.payUrl) {
             // Trả về payUrl (Link QR Code MoMo)
-            return response.data.payUrl;
+            return { 
+                session_url: response.data.payUrl, 
+                orderId: orderId 
+            };
         } else {
             console.error("MoMo Response Error:", response.data);
             throw new Error("Không lấy được link thanh toán MoMo");
