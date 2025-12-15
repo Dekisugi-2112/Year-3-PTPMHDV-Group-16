@@ -84,7 +84,7 @@ const placeOrderLogic = async (data) => {
     const orderInfo = "Thanh toan don hang " + orderId;
     const amount = data.amount.toString(); // MoMo yêu cầu amount là string
     
-    // URL trả về (Giống format cũ của bro để Frontend xử lý)
+    // URL trả về 
     const redirectUrl = `${frontend_url}/verify`;
     const ipnUrl = `${frontend_url}/verify`; // Localhost chưa có IPN thực
     

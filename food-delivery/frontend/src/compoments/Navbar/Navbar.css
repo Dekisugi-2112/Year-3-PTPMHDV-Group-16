@@ -4,20 +4,28 @@
    1. NAVBAR CHÍNH (CONTAINER)
    ========================================= */
 .navbar {
-    padding: 20px 0px;
+    /* --- FIX 1: FULL CHIỀU NGANG & CĂN CHỈNH --- */
+    width: 100%; /* Chiếm hết chiều ngang */
+    padding: 20px 5%; /* Thêm padding 2 bên (5-10%) để Logo/Menu không bị dính sát mép màn hình */
+    box-sizing: border-box; /* Quan trọng: Để padding không làm thanh này bị to quá 100% gây thanh cuộn ngang */
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: 'Phudu', cursive;
     
-    /* Sticky Header chuẩn */
+    /* --- FIX 2: VỊ TRÍ VÀ MÀU NỀN --- */
     position: sticky;
     top: 0;
-    width: 100%;
+    left: 0; /* Đảm bảo dính chặt lề trái */
     z-index: 1000;
-    background-color: rgba(255, 255, 255, 0.95); /* Hơi trong suốt nhẹ cho hiện đại */
-    backdrop-filter: blur(8px); /* Hiệu ứng mờ nền phía sau (Glassmorphism) */
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.05); /* Bóng đổ nhẹ dưới chân navbar */
+    
+    /* Hết trong suốt -> Đổi thành màu trắng đặc */
+    background-color: white; 
+    /* Bỏ backdrop-filter vì nền đã đặc rồi */
+    /* backdrop-filter: blur(8px); */ 
+    
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.05);
     transition: 0.3s;
 }
 

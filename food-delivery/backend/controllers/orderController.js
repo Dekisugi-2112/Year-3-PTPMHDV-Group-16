@@ -4,7 +4,7 @@ import { placeOrderLogic, verifyOrderLogic, getUserOrdersLogic, getAllOrdersLogi
 
 const placeOrder = async (req, res) => {
     try {
-        // 1. Lấy userId hoặc Gán ID khách lẻ (Code cũ của bro)
+        // 1. Lấy userId hoặc Gán ID khách lẻ 
         let userId = req.body.userId;
         const GUEST_ID = "693e87399c05aa5dbe2a0484"; 
 
